@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+/*section use for centering process*/
+section {
+  /* width: 100%; */
+  height: 100vh;
+  /* background-color: #3c4053; */
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+.container {
+  /* width: 100%; */
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.accordion-item {
+  /* background-color: #283042; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* box-shadow: 0.5rem 2px 0.5rem rgba(0, 0, 0, 0.1); */
+}
+
+.accordion-link {
+  font-size: 1.6rem;
+  color: rgb(255, 255, 255, 0.8);
+  text-decoration: none;
+  /* background-color: #283042; */
+  /* display: flex;*/
+  /* align-items: center; */
+  /* justify-content: center;
+  flex-direction: column; */
+}
+
+.accordion-link i {
+  color: e7d5ff;
+  padding: 0.5rem;
+}
+
+.accordion-link .ion-md-remove {
+  display: none;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+
+  /* background-color: #212838; */
+  transition: max-hight 650ms;
+  display: flex;
+}
+
+.answer::before {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 90%;
+  /* background-color: #8fc460; */
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+}
+
+.answer p {
+  color: rgb(255, 255, 255, 0.6);
+  font-size: 1.4rem;
+  padding: 2rem;
+}
+
+.accordion-item:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .ion-md-add {
+  display: none;
+}
+
+.accordion-item:target .accordion-link .ion-md-remove {
+  display: block;
+}
